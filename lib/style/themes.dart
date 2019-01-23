@@ -104,9 +104,9 @@ class LTheme {
     return this.mode == ThemeMode.Dark;
   }
 
-//  LTheme copyWith(LTheme ){
-//
-//  }
+  LTheme copyWith(ThemeMode mode,ThemeData themeData){
+    return LTheme(mode: mode, themeData: themeData);
+  }
 
   @override
   String toString() {

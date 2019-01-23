@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:l_token/bloc/bloc_app.dart';
 import 'package:l_token/pages/market_page.dart';
 import 'package:l_token/pages/profile_page.dart';
 import 'package:l_token/pages/routes/routes.dart';
@@ -73,9 +75,10 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin{
   }
 
   void onPageChanged(int index) {
-    setState(() {
-      this._currentIndex = index;
-    });
+
+//    setState(() {
+//      this._currentIndex = index;
+//    });
   }
 
   // 释放此对象使用的资源

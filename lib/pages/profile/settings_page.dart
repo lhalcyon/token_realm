@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:l_token/config/actions.dart';
-import 'package:l_token/config/states.dart';
+import 'package:l_token/bloc/states.dart';
 import 'package:l_token/pages/routes/routes.dart';
 import 'package:l_token/view/list/switch_list_item_widget.dart';
 
@@ -27,10 +26,8 @@ class SettingsPage extends StatelessWidget {
                   title: 'Theme Mode',
                   isChecked: !store.state.theme.isDark(),
                   valueChanged: (isChecked){
-                    store.dispatch(Action.ChangeTheme);
                   },
                   onTapCallback: (){
-                    store.dispatch(Action.ChangeTheme);
                   },
                 ),
                 new RaisedButton(onPressed: (){

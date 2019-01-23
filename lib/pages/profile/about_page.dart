@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:l_token/config/actions.dart';
-import 'package:l_token/config/states.dart';
+import 'package:l_token/bloc/states.dart';
 import 'package:l_token/pages/dialogs.dart';
 import 'package:l_token/pages/routes/routes.dart';
 import 'package:l_token/view/status_widget.dart';

@@ -15,8 +15,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  # todo remove
   flutter_redux: ^0.5.3
+  # state management
+  flutter_bloc: ^0.5.2
   # QR code
   qr_flutter: ^1.1.5
   # font icon
