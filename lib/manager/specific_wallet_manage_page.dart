@@ -7,7 +7,7 @@ import 'package:l_token/view/list/list_item_widget.dart';
 class SpecificWalletManagePage extends StatelessWidget {
 //  static const String routeName = Routes.wallet + '/manage';
 
-  final HDWallet wallet;
+  final WalletWrapper wallet;
 
   SpecificWalletManagePage({this.wallet});
 

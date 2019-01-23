@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:l_token/model/wallet.dart';
+import 'package:l_token/model/identity.dart';
+import 'package:l_token/pages/routes/routes.dart';
 import 'package:l_token/pages/wallet/init/mnemonic_ensure_page.dart';
 import 'package:l_token/style/styles.dart';
 
-class WalletCreateResultPage extends StatelessWidget {
-  final HDWallet wallet;
+class IdentityCreateResultPage extends StatelessWidget {
 
-  WalletCreateResultPage(this.wallet);
+  static const String routeName = Routes.main + '/create/result';
+
+  final Identity identity;
+
+  final String mnemonic;
+
+  IdentityCreateResultPage(this.identity,this.mnemonic);
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +99,7 @@ class WalletCreateResultPage extends StatelessWidget {
                 child: new RaisedButton(
                   onPressed: () {
                     Navigator.of(context).push(new MaterialPageRoute(builder: (_) {
-                      return MnemonicEnsurePage(wallet);
+                      return MnemonicEnsurePage(identity,mnemonic);
                     }));
                   },
                   child: new Container(

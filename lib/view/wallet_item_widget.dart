@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:l_token/model/wallet.dart';
 
 class WalletItemWidget extends StatelessWidget {
-  final HDWallet wallet;
+  final WalletWrapper wallet;
 
   final VoidCallback onMoreTap;
 

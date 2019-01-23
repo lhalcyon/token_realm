@@ -3,7 +3,7 @@ import 'package:l_token/model/wallet.dart';
 import 'package:l_token/util/wallet_util.dart';
 
 class WalletWidget extends StatelessWidget {
-  final HDWallet wallet;
+  final WalletWrapper wallet;
 
   final VoidCallback onMoreTap;
 

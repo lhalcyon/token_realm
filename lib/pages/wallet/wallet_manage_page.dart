@@ -91,9 +91,9 @@ class WalletManagePage extends StatelessWidget {
       color: Colors.transparent,
     ));
     for (int i = 0; i < 2; i++) {
-      list.add(new WalletItemWidget(wallet: new HDWallet(),onMoreTap: (){
+      list.add(new WalletItemWidget(wallet: new WalletWrapper(),onMoreTap: (){
         Navigator.of(context).push(new MaterialPageRoute(builder: (_) {
-          return new SpecificWalletManagePage(wallet: new HDWallet(),);
+          return new SpecificWalletManagePage(wallet: new WalletWrapper(),);
         }));
       },));
     }
@@ -107,7 +107,7 @@ class WalletManagePage extends StatelessWidget {
       color: Colors.transparent,
     ));
     for(int i =0;i<2; i++){
-      list.add(new WalletItemWidget(wallet: new HDWallet()));
+      list.add(new WalletItemWidget(wallet: new WalletWrapper()));
     }
     return list;
   }

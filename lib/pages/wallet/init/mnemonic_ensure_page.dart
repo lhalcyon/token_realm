@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:l_token/model/wallet.dart';
+import 'package:l_token/model/identity.dart';
+import 'package:l_token/pages/wallet/init/mnemonic_confirm_page.dart';
 import 'package:l_token/style/styles.dart';
 
 class MnemonicEnsurePage extends StatelessWidget {
-  final HDWallet wallet;
 
-  MnemonicEnsurePage(this.wallet);
+ final Identity identity;
+
+ final String mnemonic;
+
+  MnemonicEnsurePage(this.identity,this.mnemonic);
 
   @override
   Widget build(BuildContext context) {
@@ -60,14 +64,14 @@ class MnemonicEnsurePage extends StatelessWidget {
           new Container(
             padding: EdgeInsets.symmetric(horizontal: Dimens.padding,vertical: Dimens.padding),
             color: theme.backgroundColor,
-            child: new Text(wallet.mnemonic),
+            child: new Text(mnemonic),
           ),
           new Padding(
             padding: EdgeInsets.only(
                 top: 36.0, left: Dimens.padding, right: Dimens.padding),
             child: new RaisedButton(
               onPressed: () {
-
+                return MnemonicConfirmPage(mnemonic,identity);
               },
               child: new Container(
                 alignment: Alignment.center,

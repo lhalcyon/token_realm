@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:l_token/pages/routes/routes.dart';
-import 'package:l_token/pages/wallet/init/wallet_create_page.dart';
+import 'package:l_token/pages/wallet/init/identity_create_page.dart';
 import 'package:l_token/style/styles.dart';
 
 class IdentityInitPage extends StatelessWidget {
@@ -33,7 +33,7 @@ class IdentityInitPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: new TextStyle(
                         decoration: TextDecoration.none,
-                        fontSize: 20.0,
+                        fontSize: 18.0,
                         color: Colors.white,
                         fontWeight: FontWeight.normal),
                   ),
@@ -48,7 +48,7 @@ class IdentityInitPage extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: Dimens.padding * 2),
               child: new RaisedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(WalletCreatePage.routeName);
+                  Navigator.of(context).pushNamed(IdentityCreatePage.routeName);
                 },
                 color: Colors.blue,
                 child: new Container(

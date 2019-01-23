@@ -1,8 +1,12 @@
 
 
-class HDWallet {
+import 'package:token_core_plugin/model/ex_wallet.dart';
+
+class WalletWrapper {
 
   String name;
+
+  ExWallet wallet;
 
   String address;
 
@@ -12,7 +16,7 @@ class HDWallet {
 
   String mnemonic;
 
-  HDWallet({this.name, this.address, this.keystore, this.icon, this.mnemonic});
+  WalletWrapper({this.name, this.address, this.keystore, this.icon, this.mnemonic});
 
   @override
   int get hashCode {
@@ -21,7 +25,7 @@ class HDWallet {
 
   @override
   bool operator ==(other) {
-    if (other is HDWallet){
+    if (other is WalletWrapper){
       return address.toLowerCase() == other.address.toLowerCase();
     }
     return false;

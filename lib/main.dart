@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:l_token/config/states.dart';
-import 'package:l_token/pages/dialogs.dart';
 import 'package:l_token/style/themes.dart';
 import 'package:l_token/pages/main_page.dart';
 import 'package:l_token/pages/routes/page.dart';
+import 'package:logging/logging.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 void main() {
+  // todo 获取 debug or release 配置
+  _initLog(true);
   Store<AppState> store = new Store(appReducer,
       initialState: new AppState(theme: kLightTheme, loadingVisible: false));
   runApp(new App(store: store));
+}
+
+void _initLog(bool loggable) {
+  Logger.root.level = Level.ALL;
+  Logger.root.isLoggable(loggable?Level.ALL:Level.OFF);
+  Logger.root.onRecord.listen((record){
+    print('${record.level.name}: ${record.time}: ${record.message}');
+  });
 }
 
 class App extends StatelessWidget {
@@ -39,14 +49,6 @@ class App extends StatelessWidget {
             ],
           );
         }));
-  }
-
-  _buildApp() {
-    return new MaterialApp(
-      theme: store.state.theme.themeData,
-      routes: _buildRoutes(),
-      home: new MainPage(),
-    );
   }
 
   Map<String, WidgetBuilder> _buildRoutes() {

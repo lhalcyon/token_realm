@@ -6,7 +6,8 @@ import 'package:l_token/pages/profile/about_page.dart';
 import 'package:l_token/pages/profile/settings_page.dart';
 import 'package:l_token/pages/profile_page.dart';
 import 'package:l_token/pages/wallet/init/identity_init_page.dart';
-import 'package:l_token/pages/wallet/init/wallet_create_page.dart';
+import 'package:l_token/pages/wallet/init/identity_create_page.dart';
+import 'package:l_token/pages/wallet/init/identity_create_result_page.dart';
 import 'package:l_token/pages/wallet/wallet_import_page.dart';
 import 'package:l_token/pages/wallet/wallet_manage_page.dart';
 import 'package:l_token/pages/wallet_page.dart';
@@ -39,6 +40,7 @@ class Page {
 
 final List<Page> kAllPages = _buildPages();
 
+// 静态路由注册
 List<Page> _buildPages() {
   final List<Page> pages = <Page>[
     new Page(routeName: MarketPage.routeName, buildRoute: (BuildContext context) => new MarketPage()),
@@ -49,8 +51,7 @@ List<Page> _buildPages() {
     new Page(routeName: WalletImportPage.routeName, buildRoute: (BuildContext context) => new WalletImportPage()),
     new Page(routeName: IdentityInitPage.routeName, buildRoute: (BuildContext context) => new IdentityInitPage()),
     new Page(routeName: AboutPage.routeName, buildRoute: (BuildContext context) => new AboutPage()),
-    new Page(routeName: WalletCreatePage.routeName, buildRoute: (BuildContext context) => new WalletCreatePage()),
-
+    new Page(routeName: IdentityCreatePage.routeName, buildRoute: (BuildContext context) => new IdentityCreatePage()),
   ];
   return pages;
 }

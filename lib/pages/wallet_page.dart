@@ -135,7 +135,7 @@ class WalletPage extends StatelessWidget {
 
   List<Widget> _body(BuildContext context) {
     List<Widget> list = List();
-    HDWallet wallet = new HDWallet();
+    WalletWrapper wallet = new WalletWrapper();
     wallet.address = "0xafb87869fd4132e8700e8678765cecd6b259cda8";
     wallet.name = "HDWallet";
     Widget currentWalletWidget = new WalletWidget(wallet: wallet,onMoreTap: (){
