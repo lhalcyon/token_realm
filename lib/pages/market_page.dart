@@ -6,6 +6,7 @@ import 'package:l_token/pages/routes/routes.dart';
 import 'package:l_token/pages/wallet/init/identity_init_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc/bloc.dart';
+import 'package:l_token/view/loading.dart';
 
 class MarketPage extends StatelessWidget {
   static const String routeName = Routes.market + "/index";
@@ -25,9 +26,9 @@ class MarketPage extends StatelessWidget {
                 return new RaisedButton(
                     onPressed: () {
                       appBloc.changeTheme();
-                      appBloc.toggleLoading(true);
-                      new Future.delayed(Duration(milliseconds: 2000),(){
-                        appBloc.toggleLoading(false);
+                      Loading.show(context);
+                      new Future.delayed(Duration(seconds: 2),(){
+                        Loading.dismiss();
                       });
                     },
                     child: new Text(

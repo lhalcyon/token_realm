@@ -44,20 +44,10 @@ class _AppState extends State<App>{
       child: BlocBuilder(
         bloc: _appBloc,
         builder: (BuildContext context, AppState state) {
-          bool needLoadingVisible = _appBloc.currentState.loadingVisible;
-          return Stack(
-            alignment: Alignment.center,
-            children: <Widget>[
-              MaterialApp(
-                theme: _appBloc.currentState.theme.themeData,
-                routes: _buildRoutes(),
-                home: new MainPage(),
-              ),
-              Opacity(
-                opacity: needLoadingVisible ? 1.0 : 0.0,
-                child: _buildGlobalLoading(context),
-              ),
-            ],
+          return MaterialApp(
+            theme: _appBloc.currentState.theme.themeData,
+            routes: _buildRoutes(),
+            home: new MainPage(),
           );
         },
       ),
@@ -73,23 +63,4 @@ class _AppState extends State<App>{
     );
   }
 
-  _buildGlobalLoading(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: <Widget>[
-        const ModalBarrier(
-          color: Colors.grey,
-        ),
-        Container(
-          width: 102.0,
-          height: 102.0,
-          padding: EdgeInsets.all(24.0),
-          decoration: BoxDecoration(
-              color: const Color(0xfff2f2f2),
-              borderRadius: BorderRadius.all(Radius.circular(12.0))),
-          child: new CircularProgressIndicator(),
-        )
-      ],
-    );
-  }
 }
