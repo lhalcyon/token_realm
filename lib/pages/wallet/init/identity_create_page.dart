@@ -185,7 +185,7 @@ class _WalletCreateState extends State<IdentityCreatePage> {
   }
 
   _handleCreateWallet(BuildContext context) async {
-    //todo 校验
+    // todo 校验
     String password = _formData.password;
     String name = _formData.name;
     print("before:${new DateTime.now()}\n");

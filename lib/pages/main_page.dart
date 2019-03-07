@@ -26,13 +26,13 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin{
 
     _navigationViews = <NavigationIconView>[
       new NavigationIconView(
-        icon: const Icon(Icons.trending_up),
-        title: 'Market',
+        icon: const Icon(Icons.account_balance_wallet),
+        title: 'Wallet',
         vsync: this,
       ),
       new NavigationIconView(
-        icon: const Icon(Icons.account_balance_wallet),
-        title: 'Wallet',
+        icon: const Icon(Icons.trending_up),
+        title: 'Market',
         vsync: this,
       ),
       new NavigationIconView(
@@ -61,8 +61,8 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin{
     return new Scaffold(
       body: new PageView(
         children: <Widget>[
-          new MarketPage(),
           new WalletPage(),
+          new MarketPage(),
           new ProfilePage()
         ],
         controller: pageController,

@@ -49,7 +49,7 @@ class IdentityCreateResultPage extends StatelessWidget {
                     right: Dimens.padding,
                     bottom: 12.0),
                 child: new Text(
-                  'Please backup our wallet diligently.lToken will not able to access accounts,recover keys,reset passwords,nor reverse transactions.Your are responsible for the security of your wallets/assets.',
+                  'Please backup our wallet diligently.TokenRealm will not able to access accounts,recover keys,reset passwords,nor reverse transactions.Your are responsible for the security of your wallets/assets.',
                   style: new TextStyle(
                       color: theme.primaryColor,
                       fontSize: 16.0,
